@@ -1,6 +1,7 @@
 const add = document.querySelectorAll('.add');
 const ulist = document.querySelectorAll('.todos');
 
+// adding todos
 add[0].addEventListener('submit', (event) => {
   event.preventDefault();
   const newTodo = event.target.add.value.trim();
@@ -12,5 +13,12 @@ add[0].addEventListener('submit', (event) => {
   if (newTodo.length) {
     ulist[0].innerHTML += newHTML;
     add[0].reset();
+  }
+});
+
+// deleting todos
+ulist[0].addEventListener('click', (event) => {
+  if (event.target.classList.contains('delete')) {
+    event.target.parentElement.remove();
   }
 });
